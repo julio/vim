@@ -43,7 +43,11 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   set hlsearch
 endif
 
-set guifont=Bitstream\ Vera\ Sans\ Mono:h14
+if exists('+colorcolumn')
+  set colorcolumn=80
+endif
+
+set guifont=Monaco:h18
 set list listchars=eol:¬,tab:»·,trail:·
 
 " Switch wrap off for everything

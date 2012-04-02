@@ -24,9 +24,9 @@ endif
 " Color scheme
 set t_Co=256 " Set 256 colors
 if !has("gui_running")
-  autocmd VimEnter * GuiColorScheme railscasts2
+  autocmd VimEnter * GuiColorScheme ir_black
 else
-  colorscheme railscasts2
+  colorscheme ir_black
 endif
 
 " Don't use Ex mode, use Q for formatting

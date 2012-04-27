@@ -2,7 +2,7 @@
 "
 " set lines=55 columns=100
 " 
-colorscheme railscasts2
+" colorscheme ir_black
 " 
 " set guifont=DejaVu\ Sans\ Mono:h13
 

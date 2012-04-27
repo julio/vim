@@ -45,6 +45,7 @@ endif
 
 if exists('+colorcolumn')
   set colorcolumn=80
+  highlight ColorColumn guibg=#303030 ctermbg=233
 endif
 
 set guifont=Monaco:h16
@@ -76,18 +77,18 @@ if has("autocmd")
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
-  au!
+    au!
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+          \   exe "normal g`\"" |
+          \ endif
 
-  " Automatically load .vimrc source when saved
-  autocmd BufWritePost .vimrc source $MYVIMRC
+    " Automatically load .vimrc source when saved
+    autocmd BufWritePost .vimrc source $MYVIMRC
 
   augroup END
 
@@ -110,21 +111,21 @@ let mapleader = "\\"
 
 
 " Leader shortcuts for Rails commands
-" map <Leader>m :Rmodel 
-" map <Leader>c :Rcontroller 
-" map <Leader>v :Rview 
-" map <Leader>u :Runittest 
-" map <Leader>f :Rfunctionaltest 
-" map <Leader>tm :RTmodel 
-" map <Leader>tc :RTcontroller 
-" map <Leader>tv :RTview 
-" map <Leader>tu :RTunittest 
-" map <Leader>tf :RTfunctionaltest 
-map <Leader>sm :RSmodel 
-map <Leader>sc :RScontroller 
-map <Leader>sv :RSview 
-map <Leader>su :RSunittest 
-map <Leader>sf :RSfunctionaltest 
+" map <Leader>m :Rmodel
+" map <Leader>c :Rcontroller
+" map <Leader>v :Rview
+" map <Leader>u :Runittest
+" map <Leader>f :Rfunctionaltest
+" map <Leader>tm :RTmodel
+" map <Leader>tc :RTcontroller
+" map <Leader>tv :RTview
+" map <Leader>tu :RTunittest
+" map <Leader>tf :RTfunctionaltest
+map <Leader>sm :RSmodel
+map <Leader>sc :RScontroller
+map <Leader>sv :RSview
+map <Leader>su :RSunittest
+map <Leader>sf :RSfunctionaltest
 
 " Edit routes
 command! Rroutes :e config/routes.rb

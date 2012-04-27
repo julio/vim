@@ -13,6 +13,7 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+" set CursorLine
 
 " See https://github.com/nelstrom/vim-textobj-rubyblock/blob/master/README.md
 :runtime macros/matchit.vim
@@ -24,10 +25,14 @@ endif
 " Color scheme
 set t_Co=256 " Set 256 colors
 if !has("gui_running")
-  autocmd VimEnter * GuiColorScheme ir_black
+  autocmd VimEnter * GuiColorScheme sunburst
 else
-  colorscheme ir_black
+  colorscheme sunburst
 endif
+
+" au WinLeave * set nocursorline nocursorcolumn
+" au WinEnter * set cursorline nocursorcolumn
+" set cursorline cursorcolumn
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -45,9 +50,10 @@ endif
 
 if exists('+colorcolumn')
   set colorcolumn=80
+  highlight ColorColumn guibg=#303030 ctermbg=233
 endif
 
-set guifont=Monaco:h18
+set guifont=Monaco:h14
 set list listchars=eol:¬,tab:»·,trail:·
 
 " Switch wrap off for everything
@@ -76,18 +82,18 @@ if has("autocmd")
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
-  au!
+    au!
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+          \   exe "normal g`\"" |
+          \ endif
 
-  " Automatically load .vimrc source when saved
-  autocmd BufWritePost .vimrc source $MYVIMRC
+    " Automatically load .vimrc source when saved
+    autocmd BufWritePost .vimrc source $MYVIMRC
 
   augroup END
 
@@ -110,21 +116,21 @@ let mapleader = "\\"
 
 
 " Leader shortcuts for Rails commands
-" map <Leader>m :Rmodel 
-" map <Leader>c :Rcontroller 
-" map <Leader>v :Rview 
-" map <Leader>u :Runittest 
-" map <Leader>f :Rfunctionaltest 
-" map <Leader>tm :RTmodel 
-" map <Leader>tc :RTcontroller 
-" map <Leader>tv :RTview 
-" map <Leader>tu :RTunittest 
-" map <Leader>tf :RTfunctionaltest 
-map <Leader>sm :RSmodel 
-map <Leader>sc :RScontroller 
-map <Leader>sv :RSview 
-map <Leader>su :RSunittest 
-map <Leader>sf :RSfunctionaltest 
+" map <Leader>m :Rmodel
+" map <Leader>c :Rcontroller
+" map <Leader>v :Rview
+" map <Leader>u :Runittest
+" map <Leader>f :Rfunctionaltest
+" map <Leader>tm :RTmodel
+" map <Leader>tc :RTcontroller
+" map <Leader>tv :RTview
+" map <Leader>tu :RTunittest
+" map <Leader>tf :RTfunctionaltest
+map <Leader>sm :RSmodel
+map <Leader>sc :RScontroller
+map <Leader>sv :RSview
+map <Leader>su :RSunittest
+map <Leader>sf :RSfunctionaltest
 
 " Edit routes
 command! Rroutes :e config/routes.rb

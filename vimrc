@@ -24,9 +24,9 @@ endif
 " Color scheme
 set t_Co=256 " Set 256 colors
 if !has("gui_running")
-  autocmd VimEnter * GuiColorScheme ir_black
+  autocmd VimEnter * GuiColorScheme sunburst
 else
-  colorscheme ir_black
+  colorscheme sunburst
 endif
 
 " Don't use Ex mode, use Q for formatting
@@ -47,7 +47,7 @@ if exists('+colorcolumn')
   set colorcolumn=80
 endif
 
-set guifont=Monaco:h18
+set guifont=Monaco:h16
 set list listchars=eol:¬,tab:»·,trail:·
 
 " Switch wrap off for everything

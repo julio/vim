@@ -31,7 +31,7 @@ hi link javascriptRegexpString  Regexp
 hi link javascriptNumber        Number
 hi link javascriptNull          Constant
 
-hi ColorColumn  ctermbg=233   guibg=#111111
+hi ColorColumn  ctermbg=234   guibg=#303030
 
 hi Normal       guifg=#f8f8f8 guibg=#000000
 hi NonText      guifg=#666666 guibg=#000000

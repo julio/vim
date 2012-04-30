@@ -45,7 +45,7 @@ endif
 
 if exists('+colorcolumn')
   set colorcolumn=80
-  highlight ColorColumn guibg=#303030 ctermbg=233
+  highlight ColorColumn guibg=#303030 ctermbg=234
 endif
 
 set guifont=Monaco:h16

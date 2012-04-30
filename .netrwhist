@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/julio/.vim/colors'
 let g:netrw_dirhist_2='/Users/julio/Desktop/example129'
 let g:netrw_dirhist_3='/Users/julio/src/or/julio/outright'
 let g:netrw_dirhist_4='/Users/julio/src/or/julio/aggregation'
 let g:netrw_dirhist_5='/Users/julio/Dropbox/src/lops/callflow'
 let g:netrw_dirhist_6='/Users/julio/src/or/julio'
+let g:netrw_dirhist_7='/Users/julio/src/or/julio/ruby-style-guide'

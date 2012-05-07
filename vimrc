@@ -48,7 +48,7 @@ if exists('+colorcolumn')
   highlight ColorColumn guibg=#303030 ctermbg=234
 endif
 
-set guifont=Monaco:h16
+set guifont=Menlo:h16
 set list listchars=eol:¬,tab:»·,trail:·
 
 " Switch wrap off for everything

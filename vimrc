@@ -9,10 +9,10 @@ set backspace=indent,eol,start
 
 set nobackup
 set nowritebackup
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50     " keep 50 lines of command line history
+set ruler          " show the cursor position all the time
+set showcmd        " display incomplete commands
+set incsearch      " do incremental searching
 
 " See https://github.com/nelstrom/vim-textobj-rubyblock/blob/master/README.md
 :runtime macros/matchit.vim
@@ -23,11 +23,14 @@ endif
 
 " Color scheme
 set t_Co=256 " Set 256 colors
-if !has("gui_running")
-  autocmd VimEnter * GuiColorScheme sunburst
-else
-  colorscheme sunburst
-endif
+colorscheme Tomorrow-Night
+" if !has("gui_running")
+"   autocmd VimEnter * GuiColorScheme codeschool
+"   " let g:solarized_termcolors=256
+" else
+"   colorscheme codeschool
+" "  set background=dark
+" endif
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -39,11 +42,14 @@ map Q gq
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
   set hlsearch
+"  colorscheme solarized
+"  set background=dark
+  syntax on
 endif
 
 if exists('+colorcolumn')
+  syntax on
   set colorcolumn=80
   highlight ColorColumn guibg=#303030 ctermbg=234
 endif
@@ -257,3 +263,9 @@ map <silent> <C-H> :call Html2Haml()<CR>
 unmap <Leader>te
 
 set clipboard=unnamed
+syntax enable
+set background=dark
+colorscheme Tomorrow-Night
+
+set foldmethod=indent
+set foldnestmax=2
